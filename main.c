@@ -6,7 +6,7 @@
 /*   By: hlopez <hlopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:22:10 by hlopez            #+#    #+#             */
-/*   Updated: 2024/01/09 17:03:18 by hlopez           ###   ########.fr       */
+/*   Updated: 2024/01/15 14:35:50 by hlopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 static void	print_error(void)
 {
-	ft_printf("\n /!\\ Incorrect parameters. Please enter valid ones. /!\\\n\n");
+	ft_printf("\n Incorrect parameters. Please enter valid ones.\n\n");
 	ft_printf(" Here is a list of the possibilities:\n");
 	ft_printf(" - Mandelbrot\n");
-	ft_printf(" - Julia <real part> <imaginary part>\n\n");
+	ft_printf(" - Julia <real part> <imaginary part>\n");
+	ft_printf(" - Burning ship\n\n");
 }
 
 int	main(int ac, char **av)
@@ -25,7 +26,9 @@ int	main(int ac, char **av)
 	t_fractal	fractal;
 
 	if ((ac == 2 && (!ft_strncmp(av[1], "mandelbrot", 10)
-				|| !ft_strncmp(av[1], "Mandelbrot", 10)))
+				|| !ft_strncmp(av[1], "Mandelbrot", 10)
+				|| !ft_strncmp(av[1], "burning ship", 12)
+				|| !ft_strncmp(av[1], "Burning ship", 12)))
 		|| (ac == 4 && (!ft_strncmp(av[1], "julia", 5)
 				|| !ft_strncmp(av[1], "Julia", 5))))
 	{

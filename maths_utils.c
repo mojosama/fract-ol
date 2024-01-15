@@ -6,7 +6,7 @@
 /*   By: hlopez <hlopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:41:59 by hlopez            #+#    #+#             */
-/*   Updated: 2024/01/09 16:43:33 by hlopez           ###   ########.fr       */
+/*   Updated: 2024/01/15 14:08:22 by hlopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,12 @@ double	atod(char *num)
 		res += (*num++ - '0') * i;
 	}
 	return (sign * res);
+}
+
+double	ft_abs(double num)
+{
+	if (num < 0)
+		return (-num);
+	else
+		return (num);
 }

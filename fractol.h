@@ -6,7 +6,7 @@
 /*   By: hlopez <hlopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:29:04 by hlopez            #+#    #+#             */
-/*   Updated: 2024/01/09 17:00:58 by hlopez           ###   ########.fr       */
+/*   Updated: 2024/01/15 15:36:55 by hlopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@
 # define WHITE	0x00FFFFFF
 # define RED	0x00FF0000
 # define GREEN	0x0000FF00
+# define JADE	0x0000A36C
 # define BLUE	0x000000FF
+# define MBLUE	0x00191970
 # define IKB	0x00002FA7
 # define PINK	0x00FD6C9E
 # define PURPLE	0x00FF00FF
+# define BPURP	0x00BF40BF	
 # define YELLOW	0x00FFFF00
 # define CYAN	0x0000FFFF
+# define ORANGE	0x00FF5733
+# define BLOOD	0x00880808
 
 typedef struct s_data
 {
@@ -64,8 +69,15 @@ typedef struct s_fractal
 	double	zoom;
 	double	julia_real;
 	double	julia_i;
+	int		base_color;
 	int		color_shift;
 }				t_fractal;
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}				t_point;
 
 void		fractal_init(t_fractal *fractal);
 
@@ -73,6 +85,7 @@ double		map_scale(double num, double n_min, double n_max, double old_max);
 t_complex	complex_sum(t_complex z1, t_complex z2);
 t_complex	complex_sqr(t_complex z);
 double		atod(char *num);
+double		ft_abs(double num);
 
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void		pixel_treatment(t_fractal *fractal, int x, int y);
@@ -82,6 +95,8 @@ int			key_bind(int key, t_fractal *fractal);
 int			close_handler(t_fractal *fractal);
 int			mouse_bind(int button, int x, int y, t_fractal *fractal);
 int			pointer_tracking(int x, int y, t_fractal *fractal, int button);
+
+void		burning_ship(t_fractal *fractal);
 
 int			ft_strncmp(const char *s1, const char *s2, size_t size);
 

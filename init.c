@@ -6,7 +6,7 @@
 /*   By: hlopez <hlopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:19:56 by hlopez            #+#    #+#             */
-/*   Updated: 2024/01/09 16:42:09 by hlopez           ###   ########.fr       */
+/*   Updated: 2024/01/11 11:05:45 by hlopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	data_init(t_fractal *fractal)
 	fractal->y_shift = 0.0;
 	fractal->zoom = 1.0;
 	fractal->color_shift = 0;
+	fractal->base_color = BLACK;
 }
 
 static void	events_init(t_fractal *fract)

@@ -6,11 +6,35 @@
 /*   By: hlopez <hlopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:19:25 by hlopez            #+#    #+#             */
-/*   Updated: 2024/01/09 18:29:25 by hlopez           ###   ########.fr       */
+/*   Updated: 2024/01/15 15:51:44 by hlopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+static void	define_color(int key, t_fractal *fractal)
+{
+	if (key == 48)
+		fractal->base_color = BLACK;
+	else if (key == 49)
+		fractal->base_color = MBLUE;
+	else if (key == 50)
+		fractal->base_color = IKB;
+	else if (key == 51)
+		fractal->base_color = ORANGE;
+	else if (key == 52)
+		fractal->base_color = GREEN;
+	else if (key == 53)
+		fractal->base_color = YELLOW;
+	else if (key == 54)
+		fractal->base_color = RED;
+	else if (key == 55)
+		fractal->base_color = PURPLE;
+	else if (key == 56)
+		fractal->base_color = PINK;
+	else if (key == 57)
+		fractal->base_color = ORANGE;
+}
 
 int	key_bind(int key, t_fractal *fractal)
 {
@@ -28,6 +52,14 @@ int	key_bind(int key, t_fractal *fractal)
 		fractal->definition += 10;
 	else if (key == 65453)
 		fractal->definition -= 10;
+	else if (key >= 48 && key <= 57)
+		define_color(key, fractal);
+	else if (key == 106)
+		fractal->name = "Julia";
+	else if (key == 109)
+		fractal->name = "Mandelbrot";
+	else if (key == 98)
+		fractal->name = "Burning ship";
 	fractal_render(fractal);
 	return (0);
 }
@@ -66,12 +98,11 @@ int	mouse_bind(int button, int x, int y, t_fractal *fractal)
 
 int	pointer_tracking(int x, int y, t_fractal *frac, int button)
 {
-	if (!ft_strncmp(frac->name, "julia", 5)
-		|| !ft_strncmp(frac->name, "Julia", 5))
+	if (*(frac->name) == 'j' || *(frac->name) == 'J')
 	{
-		frac->julia_real = map_scale(x, -2, 2, WIDTH) * frac->zoom;
+		frac->julia_real = map_scale(x, -1, 1, WIDTH) * frac->zoom;
 		frac->julia_real += frac->x_shift;
-		frac->julia_i = map_scale(y, -2, 2, HEIGHT) * frac->zoom;
+		frac->julia_i = map_scale(y, -1, 1, HEIGHT) * frac->zoom;
 		frac->julia_i += frac->y_shift;
 		fractal_render(frac);
 	}

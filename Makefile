@@ -6,7 +6,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 HEADERS = fractol.h mlx.h
 
-SRCS = main.c init.c render.c maths_utils.c events.c ft_strncmp.c ft_printf.c print_formats.c
+SRCS = main.c init.c render.c maths_utils.c events.c burning_ship.c \
+		ft_strncmp.c ft_printf.c print_formats.c
 
 OBJS=$(SRCS:.c=.o)
 
