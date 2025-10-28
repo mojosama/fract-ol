@@ -89,8 +89,8 @@ Basic usage:
 ```
 
 Notes:
-- Fractal names are usually case-insensitive (check your implementation).
-- For Julia, some implementations accept two extra floats giving the complex seed; others toggle parameter changes with the mouse.
+- Fractal names are case-insensitive.
+- Julia set needs to have to floats as parameter, the real and the imaginary part..
 
 ---
 
@@ -100,12 +100,15 @@ Interactive controls:
 
 Mouse:
 - Scroll wheel up / down — Zoom in / out (centered at cursor)
+- Left or right click — In Julia set: change parameters ; Others: change color shift
 
 Keyboard:
 - Arrow keys — Pan view (left/right/up/down)
 - + / - (or numpad) — Increase / decrease max iterations
 - 1 - 9 — Change color scheme
-- Space — Toggle dynamic Julia (follow mouse)
+- J — Switch to Julia set
+- B — Switch to Burning ship
+- M — Switch to Mandelbrot set
 - ESC / Q — Quit
 
 ---
